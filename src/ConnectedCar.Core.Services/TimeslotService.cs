@@ -94,6 +94,9 @@ namespace ConnectedCar.Core.Services
             {
                 if (timeslot.Validate())
                 {
+                    timeslot.CreateDateTime = DateTime.Now;
+                    timeslot.UpdateDateTime = DateTime.Now;
+
                     batch.AddPutItem(GetTranslator().translate(timeslot));
                 }
             }

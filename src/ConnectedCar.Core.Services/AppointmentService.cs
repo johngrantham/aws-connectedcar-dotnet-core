@@ -106,6 +106,9 @@ namespace ConnectedCar.Core.Services
                 if (appointment.Validate())
                 {
                     appointment.AppointmentId = Guid.NewGuid().ToString();
+                    appointment.CreateDateTime = DateTime.Now;
+                    appointment.UpdateDateTime = DateTime.Now;
+
                     batch.AddPutItem(GetTranslator().translate(appointment));
                 }
             }

@@ -111,6 +111,9 @@ namespace ConnectedCar.Core.Services
             {
                 if (customer.Validate())
                 {
+                    customer.CreateDateTime = DateTime.Now;
+                    customer.UpdateDateTime = DateTime.Now;
+
                     batch.AddPutItem(GetTranslator().translate(customer));
                 }
             }

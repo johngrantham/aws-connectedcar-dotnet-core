@@ -86,6 +86,9 @@ namespace ConnectedCar.Core.Services
             {
                 if (vehicle.Validate())
                 {
+                    vehicle.CreateDateTime = DateTime.Now;
+                    vehicle.UpdateDateTime = DateTime.Now;
+
                     batch.AddPutItem(GetTranslator().translate(vehicle));
                 }
             }
