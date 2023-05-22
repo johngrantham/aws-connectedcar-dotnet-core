@@ -1,0 +1,16 @@
+{
+  "AccessConfig": {
+    "Region": "[region]",
+    "AccessKey": "[access key]",
+    "SecretKey": "[secret key]"
+  },
+  "DynamoConfig": {
+    "DealerTableName": "ConnectedCar_Dealer_Table_Dev",
+    "TimeslotTableName": "ConnectedCar_Timeslot_Table_Dev",
+    "AppointmentTableName": "ConnectedCar_Appointment_Table_Dev",
+    "RegistrationTableName": "ConnectedCar_Registration_Table_Dev",
+    "CustomerTableName": "ConnectedCar_Customer_Table_Dev",
+    "VehicleTableName": "ConnectedCar_Vehicle_Table_Dev",
+    "EventTableName": "ConnectedCar_Event_Table_Dev"
+  }
+}
