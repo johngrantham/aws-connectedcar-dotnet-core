@@ -16,12 +16,13 @@ namespace ConnectedCar.Core.Tools.Commands
     public abstract class BaseCommand
     {
         protected const string DealersFilePath = @"Data/Dealers";
+
         protected const string CustomersFilePath = @"Data/Customers";
-        protected const string CredentialsFilePath = @"Data/Credentials";
         
         protected const string DateFormat = "yyyy-MM-dd";
 
         private readonly ServiceProvider serviceProvider;
+
         private static Random random = new Random();
 
         public BaseCommand()

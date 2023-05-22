@@ -2,20 +2,15 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": ".NET Core Launch (console)",
+      "name": "Tools Launch (console)",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": "build",
+      "preLaunchTask": "build-tools",
       "program": "${workspaceFolder}/src/ConnectedCar.Core.Tools/bin/Debug/net6.0/ConnectedCar.Core.Tools.dll",
       "args": [],
       "cwd": "${workspaceFolder}/src/ConnectedCar.Core.Tools",
-      "console": "internalConsole",
+      "console": "integratedTerminal",
       "stopAtEntry": false
-    },
-    {
-      "name": ".NET Core Attach",
-      "type": "coreclr",
-      "request": "attach"
     }
   ]
 }

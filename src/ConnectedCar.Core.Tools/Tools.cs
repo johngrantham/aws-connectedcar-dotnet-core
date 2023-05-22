@@ -11,9 +11,9 @@ namespace ConnectedCar.Core.Tools
             try
             {
                 Console.WriteLine("Type the command number and press enter");
-                Console.WriteLine("  Type 1 to seed dealer data");
-                Console.WriteLine("  Type 2 to seed customer data");
-                Console.WriteLine("  Type 3 to seed appointment data");
+                Console.WriteLine("  Type 1 to populate dealer data");
+                Console.WriteLine("  Type 2 to populate customer data");
+                Console.WriteLine("  Type 3 to populate appointment data");
 
                 var correctInput = false;
                 var timer = new Stopwatch();
@@ -32,16 +32,16 @@ namespace ConnectedCar.Core.Tools
                         switch (command)
                         {
                             case 1:
-                                PopulateDealersCommand seedDealerDataCommand = new PopulateDealersCommand();
-                                seedDealerDataCommand.Run();
+                                PopulateDealersCommand populateDealersCommand = new PopulateDealersCommand();
+                                populateDealersCommand.Run();
                                 break;
                             case 2:
-                                PopulateCustomersCommand seedCustomerDataCommand = new PopulateCustomersCommand();
-                                seedCustomerDataCommand.Run();
+                                PopulateCustomersCommand populateCustomersCommand = new PopulateCustomersCommand();
+                                populateCustomersCommand.Run();
                                 break;
                             case 3:
-                                PopulateAppointmentsCommand seedAppointmentDataCommand = new PopulateAppointmentsCommand();
-                                seedAppointmentDataCommand.Run();
+                                PopulateAppointmentsCommand populateAppointmentsCommand = new PopulateAppointmentsCommand();
+                                populateAppointmentsCommand.Run();
                                 break;
                         }
 
