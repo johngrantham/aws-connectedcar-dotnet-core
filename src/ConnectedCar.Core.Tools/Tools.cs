@@ -54,7 +54,6 @@ namespace ConnectedCar.Core.Tools
                 }
 
                 Console.WriteLine("Finished: " + timer.Elapsed);
-                Console.ReadLine();
             }
             catch (Exception e)
             {
