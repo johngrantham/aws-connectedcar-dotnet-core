@@ -41,8 +41,6 @@ namespace ConnectedCar.Core.Tools.Commands
                 GetCustomerService().BatchUpdate(customers);
                 GetVehicleService().BatchUpdated(vehicles);
                 GetRegistrationService().BatchUpdate(registrations);
-
-                Console.WriteLine("Batch updates performed");
             });
         }
     }
