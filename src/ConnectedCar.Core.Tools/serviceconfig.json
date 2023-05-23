@@ -1,8 +1,9 @@
 {
   "AccessConfig": {
     "Region": "[region]",
-    "AccessKey": "[access key]",
-    "SecretKey": "[secret key]"
+    "AccessKeyId": "[access key]",
+    "SecretAccessKey": "[secret access key]",
+    "SessionToken": "[session token]"
   },
   "DynamoConfig": {
     "DealerTableName": "ConnectedCar_Dealer_Table_Dev",

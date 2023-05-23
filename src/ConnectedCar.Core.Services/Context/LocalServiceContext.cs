@@ -31,8 +31,9 @@ namespace ConnectedCar.Core.Services.Context
                     AccessConfig = new AccessConfig
                     { 
                         Region = configuration.GetSection("AccessConfig:Region").Value,
-                        AccessKey = configuration.GetSection("AccessConfig:AccessKey").Value,
-                        SecretKey = configuration.GetSection("AccessConfig:SecretKey").Value
+                        AccessKeyId = configuration.GetSection("AccessConfig:AccessKey").Value,
+                        SecretAccessKey = configuration.GetSection("AccessConfig:SecretKey").Value,
+                        SessionToken = configuration.GetSection("AccessConfig:SessionToken").Value
                     },
                     CognitoConfig = new CognitoConfig
                     {
@@ -62,14 +63,22 @@ namespace ConnectedCar.Core.Services.Context
 
         public AmazonCognitoIdentityProviderClient GetCognitoProvider()
         {
-            var credentials = new BasicAWSCredentials(GetServiceConfig().AccessConfig.AccessKey, GetServiceConfig().AccessConfig.SecretKey);
+            var credentials = new SessionAWSCredentials(
+                GetServiceConfig().AccessConfig.AccessKeyId, 
+                GetServiceConfig().AccessConfig.SecretAccessKey,
+                GetServiceConfig().AccessConfig.SessionToken);
+
             var region = RegionEndpoint.GetBySystemName(GetServiceConfig().AccessConfig.Region);
             return new AmazonCognitoIdentityProviderClient(credentials, region);
         }
 
         public DynamoDBContext GetDynamoDbContext()
         {
-            var credentials = new BasicAWSCredentials(GetServiceConfig().AccessConfig.AccessKey, GetServiceConfig().AccessConfig.SecretKey);
+            var credentials = new SessionAWSCredentials(
+                GetServiceConfig().AccessConfig.AccessKeyId, 
+                GetServiceConfig().AccessConfig.SecretAccessKey,
+                GetServiceConfig().AccessConfig.SessionToken);
+
             var region = RegionEndpoint.GetBySystemName(GetServiceConfig().AccessConfig.Region);
             var dbClient = new AmazonDynamoDBClient(credentials, region);
             return new DynamoDBContext(dbClient, new DynamoDBContextConfig { Conversion = DynamoDBEntryConversion.V2 });
@@ -77,7 +86,11 @@ namespace ConnectedCar.Core.Services.Context
 
         public AmazonSQSClient GetSQSClient()
         {
-            var credentials = new BasicAWSCredentials(GetServiceConfig().AccessConfig.AccessKey, GetServiceConfig().AccessConfig.SecretKey);
+            var credentials = new SessionAWSCredentials(
+                GetServiceConfig().AccessConfig.AccessKeyId, 
+                GetServiceConfig().AccessConfig.SecretAccessKey,
+                GetServiceConfig().AccessConfig.SessionToken);
+
             var region = RegionEndpoint.GetBySystemName(GetServiceConfig().AccessConfig.Region);
             var config = new AmazonSQSConfig { RegionEndpoint = region };
             return new AmazonSQSClient(credentials, config);
