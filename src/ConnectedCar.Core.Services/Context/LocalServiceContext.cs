@@ -31,8 +31,8 @@ namespace ConnectedCar.Core.Services.Context
                     AccessConfig = new AccessConfig
                     { 
                         Region = configuration.GetSection("AccessConfig:Region").Value,
-                        AccessKeyId = configuration.GetSection("AccessConfig:AccessKey").Value,
-                        SecretAccessKey = configuration.GetSection("AccessConfig:SecretKey").Value,
+                        AccessKeyId = configuration.GetSection("AccessConfig:AccessKeyId").Value,
+                        SecretAccessKey = configuration.GetSection("AccessConfig:SecretAccessKey").Value,
                         SessionToken = configuration.GetSection("AccessConfig:SessionToken").Value
                     },
                     CognitoConfig = new CognitoConfig
