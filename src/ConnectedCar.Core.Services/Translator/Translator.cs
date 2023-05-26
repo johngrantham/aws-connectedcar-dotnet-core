@@ -66,7 +66,7 @@ namespace ConnectedCar.Core.Services.Translator
                     Username = entity.Username,
                     Firstname = entity.Firstname,
                     Lastname = entity.Lastname,
-                    LastnameLower = entity.Lastname != null ? entity.Lastname : null,
+                    LastnameLower = entity.Lastname != null ? entity.Lastname.ToLower() : null,
                     PhoneNumber = entity.PhoneNumber,
                     CreateDateTime = entity.CreateDateTime,
                     UpdateDateTime = entity.UpdateDateTime
