@@ -59,10 +59,10 @@ namespace ConnectedCar.Core.Services
 
         public async Task<List<Timeslot>> GetTimeslots(string dealerId, string startDate, string endDate)
         {
-             if (string.IsNullOrEmpty(dealerId) || string.IsNullOrEmpty(startDate) || string.IsNullOrEmpty(endDate))
+            if (string.IsNullOrEmpty(dealerId) || string.IsNullOrEmpty(startDate) || string.IsNullOrEmpty(endDate))
                 throw new InvalidOperationException();
                 
-           var dbContext = GetServiceContext().GetDynamoDbContext();
+            var dbContext = GetServiceContext().GetDynamoDbContext();
             var values = new Dictionary<string, DynamoDBEntry>();
             values.Add(":dealerId", dealerId);
             values.Add(":startDate", startDate);
